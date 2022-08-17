@@ -11,6 +11,9 @@ inputs:
   versionName:
     description: "The new version name"
     required: false
+  incrementVersionCode:
+    description: "Get current version code and increment it"
+    required: false
 outputs:
   result: # id of output
     description: "Action Result"
