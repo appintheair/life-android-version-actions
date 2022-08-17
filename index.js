@@ -23,7 +23,7 @@ try {
         if (incrementVersionCode) {
             const lastVersionCodeStr = newGradle.match(versionCodeRegexPattern);
             console.log(`lastVersionCode = ${lastVersionCodeStr}`)
-            const newVersionCode = parseInt(lastVersionCodeStr) + 1;
+            const newVersionCode = parseInt(lastVersionCodeStr[2]) + 1;
             console.log(`lastVersionCode = ${lastVersionCodeStr}, newVersionCode = ${newVersionCode}`)
             newGradle = newGradle.replace(versionCodeRegexPattern, `$1${newVersionCode}`);
             }
