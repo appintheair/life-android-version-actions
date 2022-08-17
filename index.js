@@ -20,12 +20,13 @@ try {
     fs.readFile(gradlePath, 'utf8', function (err, data) {
         newGradle = data;
 
-        if (incrementVersionCode)
+        if (incrementVersionCode) {
             const lastVersionCodeStr = newGradle.match(versionCodeRegexPattern);
             console.log(`lastVersionCode = ${lastVersionCodeStr}`)
             const newVersionCode = parseInt(lastVersionCodeStr) + 1;
             console.log(`lastVersionCode = ${lastVersionCodeStr}, newVersionCode = ${newVersionCode}`)
             newGradle = newGradle.replace(versionCodeRegexPattern, `$1${newVersionCode}`);
+            }
 
         if (versionCode.length > 0)
             newGradle = newGradle.replace(versionCodeRegexPattern, `$1${versionCode}`);
